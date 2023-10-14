@@ -1,6 +1,7 @@
 package vn.edu.iuh.fit.models;
 
 import com.neovisionaries.i18n.CountryCode;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -11,6 +12,7 @@ import lombok.Setter;
 @Setter
 public class Address {
     @Id
+    @Column(name = "add_id")
     private long addId;
     private String number;
     private CountryCode country;

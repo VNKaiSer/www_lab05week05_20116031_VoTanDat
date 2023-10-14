@@ -4,21 +4,24 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 import vn.edu.iuh.fit.enums.SkillLevel;
+import vn.edu.iuh.fit.ids.CandidateSkillPk;
 
 @Getter
 @Setter
 @Entity
+@IdClass(CandidateSkillPk.class)
+@Table(name = "candidate_skill")
 public class CandidateSkill {
     @Id
     @ManyToOne
     @JoinColumn(name = "can_id", nullable = false)
-    private Candidate canId;
+    private Candidate can;
     @Id
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "skill_id")
-    private Skill skillId;
+    private Skill skill;
 
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private SkillLevel skillLevel;
     private String moreInfos;
 
@@ -26,8 +29,8 @@ public class CandidateSkill {
     }
 
     public CandidateSkill(Candidate can_id, Skill skill_id, SkillLevel skill_level, String more_infos) {
-        this.canId = can_id;
-        this.skillId = skill_id;
+        this.can = can_id;
+        this.skill = skill_id;
         this.skillLevel = skill_level;
         this.moreInfos = more_infos;
     }
@@ -36,8 +39,8 @@ public class CandidateSkill {
     @Override
     public String toString() {
         return "candidate_skill{" +
-                "can_id=" + canId +
-                ", skill_id=" + skillId +
+                "can_id=" + can +
+                ", skill_id=" + skill +
                 ", skill_level=" + skillLevel +
                 ", more_infos='" + moreInfos + '\'' +
                 '}';

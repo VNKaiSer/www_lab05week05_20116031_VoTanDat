@@ -1,6 +1,7 @@
 package vn.edu.iuh.fit.models;
 
 import jakarta.persistence.*;
+import jdk.jfr.Name;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -11,6 +12,7 @@ import java.util.List;
 @Setter
 public class Company {
     @Id
+    @Column(name = "comp_id")
     private long comId;
     @OneToOne
     @JoinColumn(name = "add_id", nullable = false)

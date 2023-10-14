@@ -10,8 +10,9 @@ import java.util.List;
 @Entity
 public class Skill {
     @Id
+    @Column(name = "skill_id")
     private long skillId;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private SkillType skillType;
     private String skillName;
     private String skillDesc;

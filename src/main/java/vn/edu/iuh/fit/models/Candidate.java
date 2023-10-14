@@ -20,6 +20,7 @@ public class Candidate {
     private String phone;
     private String email;
     private String fullName;
+
     @OneToMany
     @JoinColumn(name = "can_id")
     private List<CandidateSkill> candidateSkills;

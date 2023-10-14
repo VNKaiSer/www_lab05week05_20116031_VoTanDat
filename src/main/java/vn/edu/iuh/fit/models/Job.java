@@ -10,8 +10,11 @@ import java.util.List;
 @Table(name = "job")
 public class Job {
     @Id
+    @Column(name = "job_id", nullable = false)
     private long jobId;
+    @Column(name = "job_desc")
     private String jobDesc;
+    @Column(name = "job_name")
     private String jobName;
     @ManyToOne
     @JoinColumn(name = "comp_id", nullable = false)

@@ -1,8 +1,7 @@
 package vn.edu.iuh.fit.enums;
 
-import jakarta.persistence.Embeddable;
 
-@Embeddable
+
 public enum SkillLevel {
     MASTER(5),
     BEGINNER(1),
@@ -14,5 +13,6 @@ public enum SkillLevel {
     SkillLevel(int value){
         this.value = value;
     }
+
 
 }
