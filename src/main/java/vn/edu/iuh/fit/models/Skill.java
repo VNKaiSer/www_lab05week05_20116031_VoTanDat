@@ -17,7 +17,7 @@ public class Skill {
     private String skillName;
     private String skillDesc;
     @OneToMany
-    @JoinColumn()
+    @JoinColumn(name = "skill_id")
     private List<JobSkill> jobSkils;
 
     public Skill() {

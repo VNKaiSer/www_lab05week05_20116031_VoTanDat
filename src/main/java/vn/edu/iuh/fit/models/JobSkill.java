@@ -17,7 +17,7 @@ public class JobSkill {
     @ManyToOne
     @JoinColumn(name = "skill_id", nullable = false)
     private Skill skill;
-    @Enumerated(EnumType.ORDINAL)
+    @Enumerated(EnumType.STRING)
     private SkillLevel skillLevel;
     private String moreInfos;
 
