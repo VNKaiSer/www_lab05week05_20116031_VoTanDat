@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.models;
 
+import com.neovisionaries.i18n.CountryCode;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.Getter;
@@ -11,7 +12,8 @@ import lombok.Setter;
 public class Address {
     @Id
     private long addId;
-    private int country;
+    private String number;
+    private CountryCode country;
     private String zipCode;
     private String city;
     private String street;
@@ -20,13 +22,15 @@ public class Address {
     public Address() {
     }
 
-    public Address(long add_id, int country, String zipcode, String city, String street) {
-        this.addId = add_id;
-        this.country = country;
+    public Address(String number, String street, String city, String zipcode, CountryCode countryCode) {
+        this.number = number;
+        this.country = countryCode;
         this.zipCode = zipcode;
         this.city = city;
         this.street = street;
     }
+
+
 
     @Override
     public String toString() {
