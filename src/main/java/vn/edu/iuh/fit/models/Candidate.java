@@ -1,4 +1,4 @@
-package vn.edu.iuh.fit.entities;
+package vn.edu.iuh.fit.models;
 
 import jakarta.persistence.*;
 
@@ -6,23 +6,23 @@ import java.util.Date;
 import java.util.List;
 
 @Entity
-public class candidate {
+public class Candidate {
     @Id
     private long can_id;
     private Date dob;
     @OneToOne
     @JoinColumn(name = "add_id")
-    private address address;
+    private Address address;
     private String phone;
     private String email;
     private String full_name;
     @OneToMany
     @JoinColumn(name = "can_id")
-    private List<candidate_skill> candidateSkills;
-    public candidate() {
+    private List<CandidateSkill> candidateSkills;
+    public Candidate() {
     }
 
-    public candidate(long can_id, Date dob, vn.edu.iuh.fit.entities.address address, String phone, String email, String full_name) {
+    public Candidate(long can_id, Date dob, Address address, String phone, String email, String full_name) {
         this.can_id = can_id;
         this.dob = dob;
         this.address = address;
@@ -47,11 +47,11 @@ public class candidate {
         this.dob = dob;
     }
 
-    public vn.edu.iuh.fit.entities.address getAddress() {
+    public Address getAddress() {
         return address;
     }
 
-    public void setAddress(vn.edu.iuh.fit.entities.address address) {
+    public void setAddress(Address address) {
         this.address = address;
     }
 

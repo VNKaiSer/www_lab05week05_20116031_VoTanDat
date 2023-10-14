@@ -1,57 +1,44 @@
-package vn.edu.iuh.fit.entities;
+package vn.edu.iuh.fit.models;
 
 import jakarta.persistence.*;
+import lombok.Getter;
+import vn.edu.iuh.fit.enums.SkillLevel;
 
+@Getter
 @Entity
-public class job_skill {
+public class JobSkill {
     @Id
     @OneToOne
     @JoinColumn(name = "job_id", nullable = false)
-    private job job_id;
+    private Job job_id;
     @Id
     @OneToOne
     @JoinColumn(name = "skill_id", nullable = false)
-    private skill skill_id;
+    private Skill skill_id;
     @Enumerated(EnumType.ORDINAL)
     private SkillLevel skill_level;
     private String more_infos;
 
-    public job_skill() {
+    public JobSkill() {
     }
 
-    public job_skill(job job_id, skill skill_id, SkillLevel skill_level, String more_infos) {
+    public JobSkill(Job job_id, Skill skill_id, SkillLevel skill_level, String more_infos) {
         this.job_id = job_id;
         this.skill_id = skill_id;
         this.skill_level = skill_level;
         this.more_infos = more_infos;
     }
 
-    public job getJob_id() {
-        return job_id;
-    }
-
-    public void setJob_id(job job_id) {
+    public void setJob_id(Job job_id) {
         this.job_id = job_id;
     }
 
-    public skill getSkill_id() {
-        return skill_id;
-    }
-
-    public void setSkill_id(skill skill_id) {
+    public void setSkill_id(Skill skill_id) {
         this.skill_id = skill_id;
-    }
-
-    public SkillLevel getSkill_level() {
-        return skill_level;
     }
 
     public void setSkill_level(SkillLevel skill_level) {
         this.skill_level = skill_level;
-    }
-
-    public String getMore_infos() {
-        return more_infos;
     }
 
     public void setMore_infos(String more_infos) {
