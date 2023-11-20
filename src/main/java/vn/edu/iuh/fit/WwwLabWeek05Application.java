@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit;
 
+
 import com.neovisionaries.i18n.CountryCode;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -7,27 +8,27 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.domain.EntityScan;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import vn.edu.iuh.fit.models.Address;
-import vn.edu.iuh.fit.models.Candidate;
-import vn.edu.iuh.fit.repositories.AddressRepository;
-import vn.edu.iuh.fit.repositories.CandidateRepository;
+import vn.edu.iuh.fit.backend.models.Address;
+import vn.edu.iuh.fit.backend.models.Candidate;
+import vn.edu.iuh.fit.backend.repositories.AddressRepository;
+import vn.edu.iuh.fit.backend.repositories.CandidateRepository;
 
 import java.time.LocalDate;
 import java.util.Random;
 
+
 @SpringBootApplication
-@EntityScan(basePackages = "vn.edu.iuh.fit.models")
+@EntityScan(basePackages = "vn.edu.iuh.fit.backend.models")
 public class WwwLabWeek05Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WwwLabWeek05Application.class, args);
 	}
 
-//	@Autowired
-//	private CandidateRepository candidateRepository;
-//	@Autowired
-//	private AddressRepository addressRepository;
+	@Autowired
+	private CandidateRepository candidateRepository;
+	@Autowired
+	private AddressRepository addressRepository;
 //	@Bean
 //	CommandLineRunner initData(){
 //		return args -> {
