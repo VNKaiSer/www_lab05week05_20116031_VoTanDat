@@ -1,10 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/main.css"> <!-- Đường dẫn tới tệp CSS của bạn -->
+    <title>Popup Example</title>
 </head>
-<body>
-<h1>Hello world</h1>
+
+<body class="bg-gray-200 flex items-center justify-center h-screen">
+
+
+<h1>Đây là trang chủ</h1>
+<!-- POP UP-->
+<div class="bg-white p-8 rounded shadow-md modal" id="popupContainer">
+
+    <!-- Popup Content -->
+    <form action="web" method="post">
+        <h2 class="text-2xl font-bold mb-4">Chọn vai trò của bạn</h2>
+
+        <!-- Nút Ứng Viên -->
+        <button type="submit" value="candidate" class="bg-blue-500 text-white px-4 py-2 rounded mr-4">Ứng Viên</button>
+
+        <!-- Nút Nhà Tuyển Dụng -->
+        <button  type="submit" value="company" class="bg-green-500 text-white px-4 py-2 rounded">Nhà Tuyển Dụng</button>
+    </form>
+
+</div>
+
+
 </body>
+<script >
+    document.addEventListener('DOMContentLoaded', function () {
+        document.getElementById('popupContainer').style.display = 'block';
+    });
+</script>
 </html>
