@@ -1,5 +1,6 @@
 package vn.edu.iuh.fit.services;
 
+import org.springframework.stereotype.Service;
 import vn.edu.iuh.fit.models.Candidate;
 
 import java.util.List;

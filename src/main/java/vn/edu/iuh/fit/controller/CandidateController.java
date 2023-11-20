@@ -14,7 +14,7 @@ import java.util.List;
 @Controller
 @ComponentScan(basePackages = "vn.edu.iuh.fit")
 public class CandidateController {
-    @Autowired private CandidateService service;
+//    @Autowired private CandidateService service;
     @RequestMapping("/")
     public String index(Model model) {
 //        List<Candidate> candidates = service.getAll();

@@ -6,9 +6,9 @@ import vn.edu.iuh.fit.services.ParentService;
 
 import java.util.List;
 import java.util.Optional;
-@Service
+//@Service
 public class ParentServiceImpl<T> implements ParentService<T> {
-    @Autowired protected ParentService<T> service;
+    protected ParentService<T> service;
     @Override
     public List<T> getAll() {
         return service.getAll();
