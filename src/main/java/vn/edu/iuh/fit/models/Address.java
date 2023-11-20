@@ -1,9 +1,7 @@
 package vn.edu.iuh.fit.models;
 
 import com.neovisionaries.i18n.CountryCode;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -13,7 +11,8 @@ import lombok.Setter;
 public class Address {
     @Id
     @Column(name = "add_id")
-    private long addId;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
     private String number;
     private CountryCode country;
     private String zipCode;
@@ -37,7 +36,7 @@ public class Address {
     @Override
     public String toString() {
         return "address{" +
-                "add_id=" + addId +
+                "add_id=" + id +
                 ", country=" + country +
                 ", zipcode='" + zipCode + '\'' +
                 ", city='" + city + '\'' +

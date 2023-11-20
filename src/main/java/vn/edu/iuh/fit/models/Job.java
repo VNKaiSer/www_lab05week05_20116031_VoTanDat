@@ -11,6 +11,7 @@ import java.util.List;
 public class Job {
     @Id
     @Column(name = "job_id", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long jobId;
     @Column(name = "job_desc")
     private String jobDesc;

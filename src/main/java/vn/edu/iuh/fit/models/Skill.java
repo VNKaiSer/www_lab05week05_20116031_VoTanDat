@@ -11,6 +11,7 @@ import java.util.List;
 public class Skill {
     @Id
     @Column(name = "skill_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long skillId;
     @Enumerated(EnumType.STRING)
     private SkillType skillType;

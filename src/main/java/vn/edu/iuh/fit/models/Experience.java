@@ -1,14 +1,21 @@
 package vn.edu.iuh.fit.models;
 
+import jakarta.persistence.*;
 import lombok.Getter;
 
 import java.util.Date;
 
 @Getter
+@Entity
 public class Experience {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long expId;
     private Date fromDate;
     private Date toDate;
+    
+    @ManyToOne
+    @JoinColumn(name = "can_id")
     private Candidate canId;
     private String role;
     private String company;

@@ -13,6 +13,7 @@ import java.util.List;
 public class Company {
     @Id
     @Column(name = "comp_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long comId;
     @OneToOne
     @JoinColumn(name = "add_id", nullable = false)

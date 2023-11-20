@@ -6,7 +6,7 @@ import vn.edu.iuh.fit.services.ParentService;
 
 import java.util.List;
 import java.util.Optional;
-//@Service
+@Service
 public class ParentServiceImpl<T> implements ParentService<T> {
     protected ParentService<T> service;
     @Override

@@ -12,6 +12,7 @@ import java.util.List;
 public class Candidate {
     @Id
     @Column(name = "can_id")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long canId;
     private LocalDate dob;
     @OneToOne
