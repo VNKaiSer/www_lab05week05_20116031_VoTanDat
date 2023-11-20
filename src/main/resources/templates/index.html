@@ -1,38 +1,54 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <link rel="stylesheet" href="/main.css"> &lt;!&ndash; Đường dẫn tới tệp CSS của bạn &ndash;&gt;-->
+<!--    <title>Popup Example</title>-->
+<!--</head>-->
+
+<!--<body class="bg-gray-200 flex items-center justify-center h-screen">-->
+<!--&lt;!&ndash; POP UP&ndash;&gt;-->
+<!--<div class="bg-white p-8 rounded shadow-md modal" id="popupContainer">-->
+
+<!--    &lt;!&ndash; Popup Content &ndash;&gt;-->
+<!--    <form action="web" method="post">-->
+<!--        <h2 class="text-2xl font-bold mb-4">Chọn vai trò của bạn</h2>-->
+
+<!--        &lt;!&ndash; Nút Ứng Viên &ndash;&gt;-->
+<!--        <button name="role" type="submit" value="candidate" class="bg-blue-500 text-white px-4 py-2 rounded mr-4">Ứng Viên</button>-->
+
+<!--        &lt;!&ndash; Nút Nhà Tuyển Dụng &ndash;&gt;-->
+<!--        <button name="role" type="submit" value="company" class="bg-green-500 text-white px-4 py-2 rounded">Nhà Tuyển Dụng</button>-->
+<!--    </form>-->
+
+<!--</div>-->
+
+
+<!--</body>-->
+<!--<script >-->
+<!--    document.addEventListener('DOMContentLoaded', function () {-->
+<!--        document.getElementById('popupContainer').style.display = 'block';-->
+<!--    });-->
+<!--</script>-->
+<!--</html>-->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/main.css"> <!-- Đường dẫn tới tệp CSS của bạn -->
-    <title>Popup Example</title>
-</head>
+<head th:replace="/layout/head :: head"></head>
 
-<body class="bg-gray-200 flex items-center justify-center h-screen">
+<body>
 
+<div th:replace="/layout/header :: header"></div>
 
-<h1>Đây là trang chủ</h1>
-<!-- POP UP-->
-<div class="bg-white p-8 rounded shadow-md modal" id="popupContainer">
+<div class="container">
 
-    <!-- Popup Content -->
-    <form action="web" method="post">
-        <h2 class="text-2xl font-bold mb-4">Chọn vai trò của bạn</h2>
-
-        <!-- Nút Ứng Viên -->
-        <button name="role" type="submit" value="candidate" class="bg-blue-500 text-white px-4 py-2 rounded mr-4">Ứng Viên</button>
-
-        <!-- Nút Nhà Tuyển Dụng -->
-        <button name="role" type="submit" value="company" class="bg-green-500 text-white px-4 py-2 rounded">Nhà Tuyển Dụng</button>
-    </form>
+<!--    <div th:replace="/layout/posts :: posts(posts=${posts})"></div>-->
 
 </div>
 
+<footer th:replace="/layout/footer :: footer"></footer>
 
 </body>
-<script >
-    document.addEventListener('DOMContentLoaded', function () {
-        document.getElementById('popupContainer').style.display = 'block';
-    });
-</script>
 </html>
